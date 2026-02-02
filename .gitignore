@@ -1,0 +1,42 @@
+# Environment variables
+.env
+**/.env
+.env.local
+.env.*.local
+
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build outputs
+frontend/build/
+dist/
+
+# Uploads (user-generated content - exclude from git)
+backend/uploads/**
+!backend/uploads/products/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+*.pid
+*.seed
+*.pid.lock
+
+# Testing
+coverage/
+
+# AI instructions (optional - customize based on team preference)
+.github/copilot-instructions.md
