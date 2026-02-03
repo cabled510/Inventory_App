@@ -20,6 +20,9 @@ connectDB();
 // Initialize express app
 const app = express();
 
+// Trust proxy (required for Render, Heroku, and other reverse proxies)
+app.set('trust proxy', 1);
+
 // Security Middleware
 app.use(helmet({
   crossOriginResourcePolicy: { policy: "cross-origin" } // Allow images to be served
