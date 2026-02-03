@@ -47,10 +47,6 @@ const AdminPanel = () => {
   const [page, setPage] = useState(1);
   const [pagination, setPagination] = useState(null);
 
-  useEffect(() => {
-    fetchData();
-  }, [page]);
-
   const fetchData = async () => {
     setLoading(true);
     try {
@@ -67,6 +63,11 @@ const AdminPanel = () => {
     }
     setLoading(false);
   };
+
+  useEffect(() => {
+    fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [page]);
 
   const handleRoleChange = async (userId, newRole) => {
     if (!window.confirm(`Change this user's role to ${newRole}?`)) {

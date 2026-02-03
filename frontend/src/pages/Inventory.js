@@ -62,10 +62,6 @@ const Inventory = () => {
     status: '',
   });
 
-  useEffect(() => {
-    fetchItems();
-  }, [filters]);
-
   const fetchItems = async () => {
     try {
       const params = new URLSearchParams();
@@ -81,6 +77,11 @@ const Inventory = () => {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    fetchItems();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filters]);
 
   const handleFilterChange = (e) => {
     setFilters({
